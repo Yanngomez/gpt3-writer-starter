@@ -32,7 +32,7 @@ body {
     padding: 50px;
     position: relative;
     width: auto;
-    gap: 64px;
+    gap: 30px;
 }
 
 .header {    
@@ -40,7 +40,7 @@ body {
     flex-direction: column;
     width: 100%;
     align-items: center;
-    color: #FFF
+    color: rgba(255, 255, 0, 0.89)
 }
 
 .header-title {
@@ -80,6 +80,7 @@ body {
 
 .prompt-box {
     border-bottom-width: 1px;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 10px 0px, rgba(255, 255, 0, 0.89) -6px -2px 10px 0px;
     border-color: rgba(255, 255, 255, 0.1);
     border-left-width: 1px;
     border-right-width: 1px;
@@ -93,35 +94,38 @@ body {
     flex: 0 0 auto;
     flex-flow: column nowrap;
     gap: 10px;
-    height: 150px;
-    overflow: hidden;
+    height: 50px;
+    overflow-x: hidden;
     padding: 20px;
     position: relative;
-    width: 610px;
+    width: 300px;
     max-width: 1200px;
     will-change: transform;
-    overflow: auto;
+    overflow-y: scroll;
     outline: none;
     resize: none;
-    font-size: 16px;
+    font-size: 20px;
     font-style: normal;
     letter-spacing: 0px;
-    line-height: 1.6em;
-    text-align: start;
+    line-height: normal;
+    text-align: center;
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
     text-transform: none;
+    scroll-behavior: none;
 }
 
 textarea {
     font-family: 'Manrope', sans-serif;
 }
 
-
 .prompt-box:focus {
-    border-color:rgba(255, 255, 255, 0.75)
+    border-color:rgba(255, 255, 0, 0.74)
 }
 
+.prompt-box::-webkit-scrollbar {
+    display: none;
+}
 
 .prompt-buttons {
     display: flex;
@@ -133,7 +137,7 @@ textarea {
     gap: 12px;
     height: min-content;
     overflow: hidden;
-    padding: 0px;
+    padding: 10px;
     position: relative;
     width: 100%;
 }
@@ -169,10 +173,10 @@ textarea {
     color: rgba(255, 255, 255, 0.25)
 }
 
-.generate-button {
+.generate-button { 
     place-content: flex-start;
     align-items: flex-start;
-    background-color: rgb(255, 79, 18);
+    background-color: rgba(255, 255, 0, 0.74);
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
@@ -186,7 +190,8 @@ textarea {
     width: min-content;
     will-change: transform;
     cursor: pointer;
-}
+    box-shadow: rgba(255, 255, 0, 0.788) 6px 2px 8px 0px, rgba(136, 165, 191, 0.48) -6px -2px 10px 0px;
+    }
 
 .generate {
     outline: none;
@@ -194,12 +199,13 @@ textarea {
     flex-direction: column;
     justify-content: flex-start;
     flex-shrink: 0;
-    transform: none;
+    transform: none; 
 }
 
 .generate p {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     margin: 0;
+    font-weight:bold;
 }
 
 .loading {
@@ -242,18 +248,6 @@ textarea {
 .badge {
     display: flex;
     align-items: center;
-}
-
-.badge img {
-    width: 21px;
-    height: 17px;
-    image-rendering: pixelated;
-    flex-shrink: 0;
-    fill: black;
-    color: black;
-    transform: none;
-    transform-origin: 50% 50% 0px;
-    padding-right: 5px;
 }
 
 .badge p {
@@ -326,6 +320,7 @@ textarea {
     color: rgba(255, 255, 255, 0.5);
 }
 
+
 @media (min-width: 810px) and (max-width: 1199px) {
     .container {
         max-width: 600px;
@@ -365,7 +360,7 @@ textarea {
     }
 
     .header-title h1 {
-        font-size: 50px;
+        font-size: 45px;
     }
 
     .header-subtitle h2 {
